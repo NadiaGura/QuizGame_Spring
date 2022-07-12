@@ -1,4 +1,4 @@
-package com.JavaQuiz;
+package com.JavaQuiz.Model;
 
 import javax.persistence.*;
 
