@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 //@Entity(name = "questions") //Entity annotation specifies that current class is an Entity and is mapped to a particular table in a DB
+//@Table
 public class Question implements Serializable { //NOTE: When implementing quiz functionality, make sure that you need Serialization
 
 

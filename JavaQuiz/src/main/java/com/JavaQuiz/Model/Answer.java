@@ -15,24 +15,21 @@ public class Answer implements Serializable { //NOTE: Please check whether Seria
     private int id;
 
     @Column
-    private String questionA;
+    private String answerText;
     @Column
-    private String questionB;
-    @Column
-    private String questionC;
-    @Column
-    private String questionD;
+    private boolean answerStatus;
+    //@Column FK
+    // private int question_Id; (references QUESTION id)
+
 
     //DEFAULT CONSTRUCTOR
     public Answer() {
     }
 
-    public Answer(int id, String questionA, String questionB, String questionC, String questionD) {
+    public Answer(int id, String answerText, boolean answerStatus) {
         this.id = id;
-        this.questionA = questionA;
-        this.questionB = questionB;
-        this.questionC = questionC;
-        this.questionD = questionD;
+        this.answerText = answerText;
+        this.answerStatus=answerStatus;
     }
 
 
@@ -40,40 +37,23 @@ public class Answer implements Serializable { //NOTE: Please check whether Seria
     public int getId() {
         return id;
     }
-
-    public String getQuiestionA() {
-        return questionA;
+    public String getAnswerText() {
+        return answerText;
+    }
+    public boolean getAnswerStatus() {
+        return answerStatus;
     }
 
-    public String getQuiestionB() {
-        return questionB;
-    }
 
-    public String getQuiestionC() {
-        return questionC;
-    }
-
-    public String getQuiestionD() {
-        return questionD;
-    }
 
     public void setId(int id) {
         this.id = id;
     }
-
-    public void setQuiestionA(String quiestionA) {
-        this.questionA = quiestionA;
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
+    public void setAnswerStatus(boolean answerStatus) {
+        this.answerStatus = answerStatus;
     }
 
-    public void setQuiestionB(String quiestionB) {
-        this.questionB = quiestionB;
-    }
-
-    public void setQuiestionC(String quiestionC) {
-        this.questionC = quiestionC;
-    }
-
-    public void setQuiestionD(String quiestionD) {
-        this.questionD = quiestionD;
-    }
 }
