@@ -4,18 +4,23 @@ import javax.persistence.*;
 
 //Entity annotation specifies that current class is an Entity and is mapped to a particular table in a DB
 @Entity
-@Table
+@Table(name = "user")
 public class User {
 
     //id will be a PK
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //what is difference between GenerationType.AUTO?
+    @Column(name = "id")
     private int id;
     @Column
     private String name;
     private String password;
     private String email;
-
+    /*
+    //CREATING DB RELATIONS
+    @ManyToMany(cascade = CascadeType.ALL) //More info on cascade
+    @JoinTable(name = "results",joinColumns =@JoinColumn(name=id(comment:user_id),inverseJoinColumns=@JoinColumn(name=id(comment:user_score))))
+*/
 
     //DEFAULT CONSTRUCTOR
     public User(){
