@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+
+    <div id="formContent">
+        <h2> Password reset </h2>
+        <form>
+            <input type="text" id="login" name="login" placeholder="user name">
+            <input type="text" id="email" name="email" placeholder="email">
+            <a href="/change" th:href="@{/change}"class="buttons">Change password</a>
+
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+    </style>
+    <meta charset="UTF-8">
+     <link th:href="@{/css/main.css}" rel="stylesheet">
+    <title>My profile</title>
+</head>
+
+<body>
+<div class="dashboard"></div><!--dashboard -->
+<a href="/" th:href="@{/}"class="logout">Log out</a>
+<section class="main"><!--main -->
+  <div >
+      <p class="hello">Welcome to Java quiz</p>
+  </div>
+    <div class="content">
+        <h2>Take a new Java quiz</h2><br>
+        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Test</a>
+    </div>
+</section><!--main end -->
+<section class="right"><!--right side content -->
+     <div class="tables">
+         <h2>Your history</h2>
+         <table>
+             <tr>
+                 <th>Date</th>
+                 <th>Score</th>
+             </tr>
+         </table>
+        <h2>Top results</h2>
+        <table>
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+        </table>
+    </div>
+</section><!--right side content end-->
+
+</div><!--dashboard end -->
+
+</body>
+</html>
