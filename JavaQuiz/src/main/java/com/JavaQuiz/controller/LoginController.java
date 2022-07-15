@@ -17,11 +17,11 @@ public class LoginController {
 
 
     @PostMapping("/save")
-    public String registerUser(@RequestParam String username, @RequestParam String password,
+    public String registerUser(@RequestParam String name, @RequestParam String password,
                                @RequestParam String email){
-        User user = new User(username, password, email);
+        User user = new User(name, password, email);
         //before saving check if username and email are already taken.
-        if ((userRepository.findByUsername(user.getUsername()) != null) ||
+        if ((userRepository.findByName(user.getName()) != null) ||
                 (userRepository.findByEmail(user.getEmail()) != null)){
             throw new RuntimeException("username taken");
         }else {
