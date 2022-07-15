@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -15,6 +16,11 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
+    // registration form
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
 
     @PostMapping("/save")
     public String registerUser(@RequestParam String name, @RequestParam String password,
@@ -27,9 +33,13 @@ public class LoginController {
         }else {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
-            return "/register";
+            return "/registrationSuccessful";
         }
     }
 
+    @RequestMapping(value = "/registrationSuccessful")
+    public String registerDone() {
+        return "profile";
+    }
 
 }

@@ -25,12 +25,6 @@ public class QuizController {
     String getIndex (){
         return "index";
     }
-    //test connection
-//    @GetMapping ("/conn")
-//    public @ResponseBody
-//    Iterable<User> getConnection (){
-//        return userRepository.findAll();
-//    }
 
     // Login form
     @RequestMapping("/login")
@@ -38,11 +32,6 @@ public class QuizController {
         return "login";
     }
 
-    // registration form
-    @RequestMapping("/register")
-    public String register() {
-        return "register";
-    }
 
     // [password reset form
     @RequestMapping("/reset")
@@ -55,12 +44,7 @@ public class QuizController {
         return "changePassword";
     }
 
-    // [password reset form
-//    @RequestMapping("/quiz")
-//    public String quiz() {
-//        return "quiz";
-//    }
-    // user profile page
+
     @RequestMapping("/profile")
     public String profile() {
         return "profile";
