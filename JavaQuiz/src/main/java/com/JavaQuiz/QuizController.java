@@ -1,6 +1,6 @@
 package com.JavaQuiz;
 
-import com.JavaQuiz.Model.UserRepository;
+import com.JavaQuiz.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

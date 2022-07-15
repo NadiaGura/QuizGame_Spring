@@ -9,11 +9,11 @@ public class User {
 
     //id will be a PK
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //what is difference between GenerationType.AUTO?
+    @GeneratedValue(strategy = GenerationType.AUTO) //what is difference between GenerationType.IDENTITY?
     @Column(name = "id")
-    private int id;
+    private Long id;
     @Column
-    private String name;
+    private String username;
     private String password;
     private String email;
     /*
@@ -26,21 +26,20 @@ public class User {
     public User(){
     }
 
-    public User(int id, String name, String password, String email) {
-        this.id = id;
-        this.name = name;
+    public User(String username, String password, String email) {
+        this.username =username;
         this.password=password;
         this.email=email;
     }
 
     //GETTERS/SETTERS
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
     public String getPassword() {
         return password;
@@ -49,12 +48,12 @@ public class User {
         return email;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = username;
     }
     public void setPassword(String password) {
         this.password = password;
