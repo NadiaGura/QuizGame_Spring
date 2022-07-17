@@ -2,34 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Quiz</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link th:href="@{/css/main.css}" rel="stylesheet">
-
+    <title>Quiz</title>
 </head>
 <body>
 <div class="main-block">
-    <h1>Quiz questions</h1>
+    <h1 style="margin-bottom: 200px, margin-top: 50px">Java Quiz</h1>
     <form class="questions" action="/">
-
         <div class="grade-type">
-            <h3>What is Java?</h3>
+            <h3>What is a keyword is Java to create an object?</h3>
             <div>
                 <input type="radio" value="none" id="radioOne" name="grade" checked/>
-                <label for="radioOne" class="radio">Excellent</label>
+                <label for="radioOne" class="radio">This</label>
             </div>
             <div>
                 <input type="radio" value="none" id="radioTwo" name="grade" />
-                <label for="radioTwo" class="radio">Very Good</label>
+                <label for="radioTwo" class="radio">Sync</label>
             </div>
             <div>
                 <input type="radio" value="none" id="radioThree" name="grade" />
-                <label for="radioThree" class="radio">Good</label>
+                <label for="radioThree" class="radio">New()</label>
             </div>
             <div>
                 <input type="radio" value="none" id="radioFour" name="grade" />
-                <label for="radioFour" class="radio">Bad</label>
+                <label for="radioFour" class="radio">New</label>
             </div>
         </div>
 

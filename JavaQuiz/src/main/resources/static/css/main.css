@@ -40,7 +40,6 @@ h2 {
   color: #0d0d0d;
     border-bottom: 2px solid #5fbae9;
 }
-    @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 .wrapper {
   display: flex;
@@ -113,7 +112,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type=password], input[type=email] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -134,12 +133,12 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus , input [type=password]:focus, input[type=email]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text]:placeholder, input [type=password]:placeholder, input[type=email]:placeholder  {
   color: #cccccc;
 }
 
@@ -152,6 +151,7 @@ input[type=text]:placeholder {
 
 .buttons {
   background-color: #56baed;
+  width: 250px;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -186,48 +186,44 @@ input[type=text]:placeholder {
        margin: 40px 8px 10px 8px;
        color: #cccccc
 }
-.main{
 
+.content {
+  background-color: #fff;
+  box-shadow: 1px 1px 40px rgba(0 0 0 / .01);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  float: left;
+  width: 60%;
+  padding: 0 20px;
 }
 
-.content{
-  text-align: center;
-padding 20px 20px 20px 60px;
-background-color: #fff;
-box-shadow: 1px 1px 40px rgba(0 0 0 / .01);
-margin-bottom: 20px;
-margin-top: 20px;
-border-radius: 10px;
-position: fixed;
-width: 65%;
-margin: 40px 40px;
-height: 200px;
-padding-top: 0px;
-
-
+.right {
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  float: left;
+  width: 30%;
+  padding: 15px;
+  text-align: left;
 }
 
-/* right side content */
-.right{
-  text-align: center;
- margin: 40px 40px;
- background-color: #fff;
- padding 20px 20px 20px 60px;
-margin-bottom: 20px;
-margin-top: 165px;
-border-radius: 10px;
-width: 25%;
-padding-top: 0px;
-position: fixed;
-top: 20px;
-right: 0px;
 
-}
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .content, .right {
+    width: 100%;
+  }
+  }
 .tables{
-width: 100%
-
+width: 100%;
+table-layout: fixed;
 }
+
 .table, th, td{
+table-layout: fixed;
 width: 400px;
 border-collapse: collapse;
 background-color: #f6f6f6;
@@ -244,17 +240,16 @@ tr {
    top:5px;
 }
 /*quiz styling*/
-.main-block, .info {
+      .main-block {
       display: flex;
       flex-direction: column;
-      }
-      .main-block {
       justify-content: center;
       align-items: center;
       text-align: left;
       width: 100%;
       min-height: 100%;
       background-size: cover;
+      margin-bottom: 20px;
       }
       .questions {
       width: 86%;
@@ -263,7 +258,8 @@ tr {
       border-radius: 5px;
       border: solid 1px #ccc;
       box-shadow: 1px 2px 5px rgba(0,0,0,.31);
-      background: #fff;
+      background-color: #fff;
+
       }
 
       input {
