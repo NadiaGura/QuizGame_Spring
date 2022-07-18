@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+  </style>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+  <div id="formContent">
+    <h2> Sign In </h2>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" name="login" placeholder="user name">
+      <input type="password" id="password" name="password" placeholder="password">
+      <a href="/profile" th:href="@{/profile}"class="buttons">Sign in</a>
+    </form>
+
+    <!-- Remind Password -->
+    <div id="formFooter">
+      <a href="/reset" th:href="@{/reset}">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

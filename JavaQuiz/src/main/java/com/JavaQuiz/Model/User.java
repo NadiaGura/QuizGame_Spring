@@ -9,12 +9,13 @@ public class User {
 
     //id will be a PK
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //what is difference between GenerationType.AUTO?
+    @GeneratedValue(strategy = GenerationType.AUTO) //what is difference between GenerationType.IDENTITY?
     @Column(name = "id")
     private int id;
     @Column
     private String name;
     private String password;
+    @Column(unique = true)
     private String email;
     /*
     //CREATING DB RELATIONS
@@ -26,9 +27,8 @@ public class User {
     public User(){
     }
 
-    public User(int id, String name, String password, String email) {
-        this.id = id;
-        this.name = name;
+    public User(String name, String password, String email) {
+        this.name =name;
         this.password=password;
         this.email=email;
     }
@@ -54,7 +54,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = this.name;
     }
     public void setPassword(String password) {
         this.password = password;
