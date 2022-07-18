@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--showing only 5 table rows-->
+<style>
+tr:nth-child(n + 6) {
+    visibility: collapse;
+}
+</style>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+     <link th:href="@{/css/main.css}" rel="stylesheet">
+    <title>My profile</title>
+</head>
+
+<body>
+<div class="dashboard"></div><!--dashboard -->
+<a href="/" th:href="@{/}"class="logout">Log out</a>
+<section class="main"><!--main -->
+  <div >
+      <p class="hello">Welcome to Java quiz</p>
+  </div>
+    <div class="content">
+        <h2>Take a new Java quiz</h2><br>
+        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Test</a>
+    </div>
+</section><!--main end -->
+<section class="right"><!--right side content -->
+     <div class="tables">
+         <h2>Your history</h2>
+         <table style="width:100%">
+             <thead>
+             <tr>
+                 <th>Date</th>
+                 <th>Score</th>
+             </tr>
+             </thead>
+             <tbody>
+             <tr th:each="users : ${user}" >
+                 <td th:text="${users.name}">test</td>
+                 <td th:text="${users.email}">test</td>
+             </tr>
+             </tbody>
+         </table>
+        <h2>Top results</h2>
+        <table class="td-none">
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+            <tr th:each="users : ${user}">
+                <td th:text="${users.name}">test</td>
+                <td th:text="${users.email}">test</td>
+            </tr>
+        </table>
+    </div>
+</section><!--right side content end-->
+
+</div><!--dashboard end -->
+
+</body>
+</html>
