@@ -14,10 +14,11 @@
     <h2> Sign In </h2>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" name="login" placeholder="user name">
+    <form th:action="@{/logInto}" method="post">
+      <div th:if="${param.error}"><p>[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]] </p></div>
+      <input type="text" id="login" name="username" placeholder="user name">
       <input type="password" id="password" name="password" placeholder="password">
-      <a href="/profile" th:href="@{/profile}"class="buttons">Sign in</a>
+      <input type="submit" class="buttons" value="Sign in">
     </form>
 
     <!-- Remind Password -->
