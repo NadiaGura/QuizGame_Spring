@@ -1,6 +1,7 @@
 package com.JavaQuiz.controller;
 import com.JavaQuiz.Model.User;
 import com.JavaQuiz.repository.UserRepository;
+import com.JavaQuiz.services.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     @Autowired
+    // needed to use method that checks if user is logged in.
+    private Services services;
+    @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UserRepository userRepository;
@@ -19,7 +23,7 @@ public class LoginController {
     // registration form
     @RequestMapping("/register")
     public String register() {
-        return "register";
+        return services.isAuthenticated("register");
     }
 
     @PostMapping("/save")
@@ -36,7 +40,6 @@ public class LoginController {
             return "/registrationSuccessful";
         }
     }
-
     @RequestMapping(value = "/registrationSuccessful")
     public String registerDone() {
         return "profile";
