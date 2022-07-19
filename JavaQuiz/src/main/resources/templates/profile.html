@@ -14,8 +14,10 @@ tr:nth-child(n + 6) {
 
 <body>
 <div class="dashboard"></div><!--dashboard -->
-<a href="/" th:href="@{/}"class="logout">Log out</a>
-<form th:action="@{/logOut}" method="post"> <input type="submit" class="logout" value="Log out"> </form>
+<form th:action="@{/logOut}" method="post" class="logoutbtn">
+    <input type="submit" class="buttons" style="background-color: #f6f6f6;color: black" value="Log out">
+<!--    <span th:text="${user.name}"></span>-->
+</form>
 <section class="main"><!--main -->
   <div >
       <p class="hello">Welcome to Java quiz</p>
@@ -37,8 +39,8 @@ tr:nth-child(n + 6) {
              </thead>
              <tbody>
              <tr th:each="usResults : ${userResults}">
-                 <td th:text="${userResults.date}"></td>
-                 <td th:text="${userResults.score}"></td>
+                 <td th:text="${usResults.date}"></td>
+                 <td th:text="${usResults.score}"></td>
              </tr>
              </tbody>
          </table>

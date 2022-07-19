@@ -165,11 +165,11 @@ input[type=text]:placeholder, input [type=password]:placeholder, input[type=emai
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+}
+.logoutbtn{
+   position:fixed;
+   right:10px;
+   top:5px;
 }
 /*profile page style*/
 
@@ -188,11 +188,13 @@ input[type=text]:placeholder, input [type=password]:placeholder, input[type=emai
 }
 
 .content {
+   display:inline-block;
   background-color: #fff;
   box-shadow: 1px 1px 40px rgba(0 0 0 / .01);
   margin-bottom: 20px;
   margin-top: 20px;
   margin-right: 20px;
+  margin-left: 20px;
   border-radius: 10px;
   float: left;
   width: 60%;
@@ -200,9 +202,11 @@ input[type=text]:placeholder, input [type=password]:placeholder, input[type=emai
 }
 
 .right {
+   display:inline-block;
   background-color: #fff;
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 20px;
   border-radius: 10px;
   float: left;
   width: 30%;
@@ -234,11 +238,7 @@ padding: 10px;
 tr {
   border-bottom: 1px solid #ddd;
 }
-.logout{
-   position:fixed;
-   right:10px;
-   top:5px;
-}
+
 /*quiz styling*/
       .main-block {
       display: flex;

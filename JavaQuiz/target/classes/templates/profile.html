@@ -14,15 +14,17 @@ tr:nth-child(n + 6) {
 
 <body>
 <div class="dashboard"></div><!--dashboard -->
-<a href="/" th:href="@{/}"class="logout">Log out</a>
-<form th:action="@{/logOut}" method="post"> <input type="submit" class="logout" value="Log out"> </form>
+<form th:action="@{/logOut}" method="post" class="logoutbtn">
+    <input type="submit" class="buttons" style="background-color: #f6f6f6;color: black" value="Log out">
+<!--    <span th:text="${user.name}"></span>-->
+</form>
 <section class="main"><!--main -->
   <div >
       <p class="hello">Welcome to Java quiz</p>
   </div>
     <div class="content">
         <h2>Take a new Java quiz</h2><br>
-        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Test</a>
+        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Quiz</a>
     </div>
 </section><!--main end -->
 <section class="right"><!--right side content -->
@@ -36,21 +38,21 @@ tr:nth-child(n + 6) {
              </tr>
              </thead>
              <tbody>
-             <tr th:each="users : ${user}" >
-                 <td th:text="${users.name}">test</td>
-                 <td th:text="${users.email}">test</td>
+             <tr th:each="usResults : ${userResults}">
+                 <td th:text="${usResults.date}"></td>
+                 <td th:text="${usResults.score}"></td>
              </tr>
              </tbody>
          </table>
         <h2>Top results</h2>
         <table class="td-none">
         <tr>
-            <th>User</th>
+            <th>Date</th>
             <th>Score</th>
         </tr>
-            <tr th:each="users : ${user}">
-                <td th:text="${users.name}">test</td>
-                <td th:text="${users.email}">test</td>
+            <tr th:each="result : ${results}">
+                <td th:text="${result.date}"></td>
+                <td th:text="${result.score}"></td>
             </tr>
         </table>
     </div>

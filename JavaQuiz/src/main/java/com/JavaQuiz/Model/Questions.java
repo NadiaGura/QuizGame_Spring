@@ -10,21 +10,30 @@ public class Questions implements Serializable { //NOTE: When implementing quiz 
 
     @Id //current annotation shows PK
     @GeneratedValue // DB configuration for the current field (serial)
+    @Column(name = "id")
     private int id;
 
-
-
     //creating columns in the table for question
-    @Column
+    @Column(name = "question")
     private String question;
+
+    @Column(name = "answer_A")
     private String questionA;
+
+    @Column(name = "answer_B")
     private String questionB;
+
+    @Column(name = "answer_C")
     private String questionC;
+
+    @Column(name = "answer_D")
     private String questionD;
+
+    @Column(name = "correct")
     private String correct;
-    private String answerChosen;
 
-
+//    @Column(name = "score_id")?? do wee need it in db or only here
+//    private String answerChosen;
 
     //DEFAULT CONSTRUCTOR
     public Questions() {
@@ -76,9 +85,9 @@ public class Questions implements Serializable { //NOTE: When implementing quiz 
         return correct;
     }
 
-    public String getAnswerChosen() {
-        return answerChosen;
-    }
+//    public String getAnswerChosen() {
+//        return answerChosen;
+//    }
     public void setId(int id) {
         this.id = id;
     }
@@ -107,7 +116,7 @@ public class Questions implements Serializable { //NOTE: When implementing quiz 
         this.correct = correct;
     }
 
-    public void setAnswerChosen(String answerChosen) {
-        this.answerChosen = answerChosen;
-    }
+//    public void setAnswerChosen(String answerChosen) {
+//        this.answerChosen = answerChosen;
+//    }
 }
