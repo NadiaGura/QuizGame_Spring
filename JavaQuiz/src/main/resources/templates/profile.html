@@ -21,7 +21,7 @@ tr:nth-child(n + 6) {
   </div>
     <div class="content">
         <h2>Take a new Java quiz</h2><br>
-        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Test</a>
+        <a href="/quiz" th:href="@{/quiz}"class="buttons">Take a Quiz</a>
     </div>
 </section><!--main end -->
 <section class="right"><!--right side content -->
@@ -35,21 +35,21 @@ tr:nth-child(n + 6) {
              </tr>
              </thead>
              <tbody>
-             <tr th:each="users : ${user}" >
-                 <td th:text="${users.name}">test</td>
-                 <td th:text="${users.email}">test</td>
+             <tr th:each="usResults : ${userResults}">
+                 <td th:text="${userResults.date}"></td>
+                 <td th:text="${userResults.score}"></td>
              </tr>
              </tbody>
          </table>
         <h2>Top results</h2>
         <table class="td-none">
         <tr>
-            <th>User</th>
+            <th>Date</th>
             <th>Score</th>
         </tr>
-            <tr th:each="users : ${user}">
-                <td th:text="${users.name}">test</td>
-                <td th:text="${users.email}">test</td>
+            <tr th:each="result : ${results}">
+                <td th:text="${result.date}"></td>
+                <td th:text="${result.score}"></td>
             </tr>
         </table>
     </div>

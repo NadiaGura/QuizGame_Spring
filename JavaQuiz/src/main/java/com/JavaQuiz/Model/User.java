@@ -23,7 +23,7 @@ public class User {
     @JoinTable(name = "results",joinColumns =@JoinColumn(name=id(comment:user_id),inverseJoinColumns=@JoinColumn(name=id(comment:user_score))))
 */
 
-    //DEFAULT CONSTRUCTOR
+//    //DEFAULT CONSTRUCTOR
     public User(){
     }
 
