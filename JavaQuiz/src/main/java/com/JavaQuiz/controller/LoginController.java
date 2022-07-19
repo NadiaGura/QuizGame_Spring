@@ -40,7 +40,6 @@ public class LoginController {
             return "/registrationSuccessful";
         }
     }
-
     @RequestMapping(value = "/registrationSuccessful")
     public String registerDone() {
         return "profile";

@@ -35,7 +35,6 @@ public class QuizController {
         return services.isAuthenticated("login");
     }
 
-
     // [password reset form
     @RequestMapping("/reset")
     public String resetPassword() {
