@@ -1,5 +1,7 @@
 package com.JavaQuiz;
 
+import com.JavaQuiz.Model.Questions;
+import com.JavaQuiz.Model.Results;
 import com.JavaQuiz.repository.UserRepository;
 import com.JavaQuiz.services.Services;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,11 @@ public class QuizController {
 
     @Autowired
     private Services services;
+
+
+
+
+
 
     @RequestMapping(value = {"/quiz"}, method = RequestMethod.GET)
     public ModelAndView quiz(){ //ModelAndView in Spring -
@@ -53,11 +60,23 @@ public class QuizController {
         return "profile";
     }
 
+
+    //QUIZ FUNCTIONALITY
+
     // quiz result page
     @RequestMapping("/result")
     public String result() {
         return "result";
     }
+//    public int getResult(){
+//        int correctResult = 0;
+//
+//        for(Questions questions: quest){
+//            if(answerChoosen == correct){
+//                correctResult++;
+//            }
+//        }
+//    }
     }
 
 
