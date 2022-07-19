@@ -1,6 +1,7 @@
 package com.JavaQuiz;
 
 import com.JavaQuiz.repository.UserRepository;
+import com.JavaQuiz.services.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller //Controller Annotation
 public class QuizController {
+
+    @Autowired
+    private Services services;
 
     @RequestMapping(value = {"/quiz"}, method = RequestMethod.GET)
     public ModelAndView quiz(){ //ModelAndView in Spring -
@@ -22,32 +26,30 @@ public class QuizController {
     //home page
     @GetMapping
     String getIndex (){
-        return "index";
+        return services.isAuthenticated("index");
     }
 
     // Login form
     @RequestMapping("/login")
     public String login() {
-        return "login";
+        return services.isAuthenticated("login");
     }
-
 
     // [password reset form
     @RequestMapping("/reset")
     public String resetPassword() {
-        return "reset";
+        return services.isAuthenticated("reset");
     }
     // [password reset form
     @RequestMapping("/change")
     public String changePassword() {
-        return "changePassword";
+        return services.isAuthenticated("changePassword");
     }
 
-//need tu add username to be displayed in profile page!!!
-    @RequestMapping(value = "/profile/{id}",method = RequestMethod.GET )
-    public String profile(@PathVariable Integer id, Model model) {
-        model.addAttribute("userResults",resultRepository.findByUserId(id));
-        model.addAttribute("results",resultRepository.findAll());
+
+    @RequestMapping(value = "/profile",method = RequestMethod.GET )
+    public String profile(Model model) {
+        //model.addAttribute("user",userRepository.findAll());
         return "profile";
     }
 
