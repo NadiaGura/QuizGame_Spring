@@ -17,7 +17,18 @@ public class User {
     private String password;
     @Column(unique = true)
     private String email;
-    /*
+
+    @Column
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+/*
     //CREATING DB RELATIONS
     @ManyToMany(cascade = CascadeType.ALL) //More info on cascade
     @JoinTable(name = "results",joinColumns =@JoinColumn(name=id(comment:user_id),inverseJoinColumns=@JoinColumn(name=id(comment:user_score))))

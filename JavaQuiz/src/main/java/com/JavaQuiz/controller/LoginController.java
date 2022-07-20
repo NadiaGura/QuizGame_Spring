@@ -5,6 +5,7 @@ import com.JavaQuiz.services.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,12 +30,13 @@ public class LoginController {
 
     @PostMapping("/save")
     public String registerUser(@RequestParam String name, @RequestParam String password,
-                               @RequestParam String email){
+                               @RequestParam String email, Model model){
         User user = new User(name, password, email);
         //before saving check if username and email are already taken.
         if ((userRepository.findByName(user.getName()) != null) ||
                 (userRepository.findByEmail(user.getEmail()) != null)){
-            throw new RuntimeException("username taken");
+            model.addAttribute("error", new Exception());
+            return "/register";
         }else {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);

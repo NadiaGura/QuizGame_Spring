@@ -10,7 +10,7 @@
 
     <div id="formContent">
         <h2> Sign Up </h2>
-
+        <div th:if="${error != null}"><p>Username or email is already taken.</p></div>
         <!-- registration Form -->
         <form action="/save" method="post">
             <input type="text" id="login" name="name" placeholder="user name" required>

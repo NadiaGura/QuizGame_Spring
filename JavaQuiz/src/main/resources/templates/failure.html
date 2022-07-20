@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+
+    <div id="formContent">
+        <h2 th:text="${error}"></h2>
+
+        <!-- registration Form -->
+        <form>
+            <a href="/" th:href="@{/}"class="buttons">To main menu</a>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

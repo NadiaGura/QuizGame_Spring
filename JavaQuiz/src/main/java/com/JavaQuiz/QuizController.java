@@ -8,6 +8,7 @@ import com.JavaQuiz.repository.QuestionRepository;
 import com.JavaQuiz.repository.ResultRepository;
 import com.JavaQuiz.repository.UserRepository;
 import com.JavaQuiz.services.QuestionService;
+import com.JavaQuiz.services.Services;
 import com.JavaQuiz.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,8 @@ public class QuizController {
         this.questionService = questionService;
     }
 
-
+    @Autowired
+    private Services services;
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -76,9 +78,7 @@ public class QuizController {
 
     //home page
     @GetMapping
-    String getIndex (){
-        return "index";
-    }
+    String getIndex (){ return services.isAuthenticated("index"); }
 
     // Login form
     @RequestMapping("/login")
