@@ -261,51 +261,6 @@ tr {
       background-color: #fff;
 
       }
-
-      input {
-      width: calc(100% - 57px);
-      height: 36px;
-      padding-left: 10px;
-      margin: 0 0 12px -5px;
-      border-radius: 0 5px 5px 0;
-      border: solid 1px #cbc9c9;
-      box-shadow: 1px 2px 5px rgba(0,0,0,.09);
-      background: #fff;
-      }
-input[type=radio] {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      text-indent: 32px;
-      cursor: pointer;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 0.5px solid #56baed;
-      background: #fff;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 4px;
-      top: 5px;
-      left: 4px;
-      border-bottom: 3px solid #56baed;
-      border-left: 3px solid #56baed;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
       textarea {
       width: 99%;
       margin-bottom: 12px;

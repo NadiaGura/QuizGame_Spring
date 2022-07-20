@@ -8,30 +8,41 @@
 </head>
 <body>
 <div class="main-block">
-    <h1 style="margin-bottom: 200px, margin-top: 50px">Java Quiz</h1>
-    <form class="questions" action="/">
-        <div class="grade-type">
-            <h3>What is a keyword is Java to create an object?</h3>
+    <form th:action="@{/submit}" th:object="${answersDto}" method="POST">
+        <div th:object="${questions}" class="questions">
+        <div>
             <div>
-                <input type="radio" value="none" id="radioOne" name="grade"/>
-                <label for="radioOne" class="radio">This</label>
-            </div>
-            <div>
-                <input type="radio" value="none" id="radioTwo" name="grade" />
-                <label for="radioTwo" class="radio">Sync</label>
-            </div>
-            <div>
-                <input type="radio" value="none" id="radioThree" name="grade" />
-                <label for="radioThree" class="radio">New()</label>
-            </div>
-            <div>
-                <input type="radio" value="none" id="radioFour" name="grade" />
-                <label for="radioFour" class="radio">New</label>
+                <br>
+                <fieldset th:each="question, count: ${questions}">
+
+                    <label> <strong th:text="${question.title}"></strong></label>
+
+                    <ul >
+                        <li th:each="option, i : ${question.options}" style="text-decoration:none">
+                            <input th:name="${question.questionId}"
+                                   th:value="${option.optionText}"
+                                   th:id="${'option' + (i.index + 1)}"
+                                   type="radio"
+                                   th:answer="${question.optionCorrect}"
+                            />
+                            <label th:text="${option.optionText}"
+                                   th:for="${'option' + (i.index + 1)}"
+                            ></label>
+                        </li>
+
+                    </ul>
+
+                </fieldset>
+
             </div>
         </div>
 
-        <input type="submit" href="/" th:href="@{/result}" class="buttons" value="Submit">
-    </form>
+        <br>
+        <button type="submit" href="/" class="buttons">submit</button>
 </div>
+</form>
+</div>
+</div>
+
 </body>
 </html>
