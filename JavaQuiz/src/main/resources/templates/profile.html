@@ -30,22 +30,18 @@ tr:nth-child(n + 6) {
 <section class="right"><!--right side content -->
      <div class="tables">
          <h2>Your history</h2>
-         <table style="width:100%">
-             <thead>
+         <table style="width:100%" data-order=[[2,"desc"]]>
              <tr>
                  <th>Date</th>
                  <th>Score</th>
              </tr>
-             </thead>
-             <tbody>
              <tr th:each="usResults : ${userResults}">
-                 <td th:text="${usResults.userID}"></td>
+                 <td th:text="${usResults.date}"></td>
                  <td th:text="${usResults.score}"></td>
              </tr>
-             </tbody>
          </table>
         <h2>Top results</h2>
-        <table class="td-none">
+        <table class="td-none" data-order=[[2,"desc"]]>
         <tr>
             <th>Date</th>
             <th>Score</th>

@@ -10,6 +10,7 @@ import com.JavaQuiz.repository.UserRepository;
 import com.JavaQuiz.services.Services;
 import com.JavaQuiz.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,6 @@ public class QuizController {
     public String showQuiz(@ModelAttribute AnswersDTO answersDto, Model model){
         List<Question> questions = questionsRepository.findAll();
         model.addAttribute("questions", questions);
-//        resultRepository.save(results);
         model.addAttribute("answersDto", answersDto);
         return "quiz";
     }
@@ -65,7 +65,6 @@ public class QuizController {
             }
         }
         double score = Utils.calculateNegativeMarks(opted, correct);
-        Results results = new Results();
         model.addAttribute("score", score);
         return "result";
     }
@@ -78,8 +77,8 @@ public class QuizController {
         User user = new User();
         user = userRepository.findByName(name);
         int id = user.getId();
-//        model.addAttribute("userResults",resultRepository.findByUserId(id));
-        model.addAttribute("results",resultRepository.findAll());
+        model.addAttribute("userResults",resultRepository.findByUserId(id));
+        model.addAttribute("results",resultRepository.findAll(Sort.by(Sort.Direction.DESC, "score")));
         System.out.println(id);
         return "profile";
     }
