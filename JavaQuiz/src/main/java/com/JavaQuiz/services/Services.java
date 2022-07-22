@@ -21,7 +21,7 @@ public class Services {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(auth instanceof AnonymousAuthenticationToken)) {
-            return "profile";
+            return "redirect:profile";
         }
         return  place;
     }
