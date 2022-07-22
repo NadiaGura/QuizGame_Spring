@@ -9,12 +9,11 @@
 <div class="wrapper fadeInDown">
 
     <div id="formContent">
+<!--        password reset form-->
         <h2> Password reset </h2>
         <div th:if="${error != null}"><p>Invalid email</p></div>
         <form th:action="@{/forgotPassword}" method="post">
-<!--            <input type="text" id="login" name="name" placeholder="user name" required>-->
             <input type="email" id="email" name="email" placeholder="email" required>
-<!--            <a href="/change" th:href="@{/change}"class="buttons">Change password</a>-->
             <input type="submit" class="buttons" value="Change password">
         </form>
 

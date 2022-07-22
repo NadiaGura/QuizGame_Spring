@@ -24,14 +24,6 @@ public class Results implements Serializable {//NOTE: When implementing quiz fun
     @Column(name = "user_id") //FK
     private int userId; //(references USER id)
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     //    NOTE:Choose data type for DATE
     @Column (name = "date")
     private String date;
@@ -48,7 +40,6 @@ public class Results implements Serializable {//NOTE: When implementing quiz fun
         this.score = score;
     }
 
-
     //GETTER/SETTER
     public int getId() {
         return id;
@@ -64,5 +55,13 @@ public class Results implements Serializable {//NOTE: When implementing quiz fun
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -47,5 +47,20 @@ public class LoginController {
     public String registerDone() {
         return "profile";
     }
+    // Login form
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
 
+    // password reset form
+    @RequestMapping("/reset")
+    public String resetPassword() {
+        return "reset";
+    }
+    // [password reset form
+    @RequestMapping("/change")
+    public String changePassword() {
+        return "changePassword";
+    }
 }

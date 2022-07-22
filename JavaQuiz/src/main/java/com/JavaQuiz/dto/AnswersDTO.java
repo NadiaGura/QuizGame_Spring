@@ -1,7 +1,8 @@
 package com.JavaQuiz.dto;
 
+
 public class AnswersDTO {
-    String[] answers = new String[20];
+    String[] answers = new String[10];
 
     public AnswersDTO() {
 
@@ -10,7 +11,6 @@ public class AnswersDTO {
         super();
         this.answers = answers;
     }
-
 
     public String[] getAnswers() {
 

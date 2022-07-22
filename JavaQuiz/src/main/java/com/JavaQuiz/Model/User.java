@@ -49,7 +49,6 @@ public class User {
     public int getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
@@ -59,11 +58,9 @@ public class User {
     public String getEmail() {
         return email;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public void setName(String name) {
         this.name = this.name;
     }

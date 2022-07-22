@@ -1,5 +1,6 @@
+<!--User profile page with 2 tablee-->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <!--showing only 5 table rows-->
 <style>
@@ -16,11 +17,10 @@ tr:nth-child(n + 6) {
 <div class="dashboard"></div><!--dashboard -->
 <form th:action="@{/logOut}" method="post" class="logoutbtn">
     <input type="submit" class="buttons" style="background-color: #f6f6f6;color: black" value="Log out">
-<!--    <span th:text="${user.name}"></span>-->
 </form>
 <section class="main"><!--main -->
   <div >
-      <p class="hello">Welcome to Java quiz</p>
+      <p class="hello">Welcome, <span sec:authentication="name"></span>!</p>
   </div>
     <div class="content">
         <h2>Take a new Java quiz</h2><br>
@@ -39,7 +39,7 @@ tr:nth-child(n + 6) {
              </thead>
              <tbody>
              <tr th:each="usResults : ${userResults}">
-                 <td th:text="${usResults.date}"></td>
+                 <td th:text="${usResults.userID}"></td>
                  <td th:text="${usResults.score}"></td>
              </tr>
              </tbody>

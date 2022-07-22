@@ -1,3 +1,4 @@
+<!--Displays questions from database, accepts answers-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -8,17 +9,17 @@
 </head>
 <body>
 <div class="main-block">
-    <form th:action="@{/submit}" th:object="${answersDto}" method="POST">
-        <div th:object="${questions}" class="questions">
-        <div>
+<!--    Quiz form-->
+    <form th:action="@{/result}" th:object="${answersDto}" method="POST" >
+        <div th:object="${questions}" class="questions" >
+            <h2> Each question has one correct answer and to submit your quiz press SUBMIT</h2>
+            <div>
             <div>
                 <br>
                 <fieldset th:each="question, count: ${questions}">
-
                     <label> <strong th:text="${question.title}"></strong></label>
-
                     <ul >
-                        <li th:each="option, i : ${question.options}" style="text-decoration:none">
+                        <li th:each="option, i : ${question.answers}" style="text-decoration:none">
                             <input th:name="${question.questionId}"
                                    th:value="${option.optionText}"
                                    th:id="${'option' + (i.index + 1)}"
@@ -27,9 +28,10 @@
                             />
                             <label th:text="${option.optionText}"
                                    th:for="${'option' + (i.index + 1)}"
-                            ></label>
-                        </li>
+                            id="question1">
+                           </label>
 
+                        </li>
                     </ul>
 
                 </fieldset>

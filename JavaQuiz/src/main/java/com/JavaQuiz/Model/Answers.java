@@ -3,23 +3,20 @@ package com.JavaQuiz.Model;
 import javax.persistence.*;
 @Entity
 @Table(name = "options")
-public class Option {
+public class Answers {
 
         @javax.persistence.Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long Id;
-
-
         private String optionText;
 
         @ManyToOne()
         @JoinColumn(name="question_id")
         private Question question;
 
-        public Option() {
-
+        public Answers() {
         }
-        public Option(String optionText) {
+        public Answers(String optionText) {
             super();
             this.optionText = optionText;
         }
@@ -27,15 +24,12 @@ public class Option {
         public Long getId() {
             return Id;
         }
-
         public void setId(Long id) {
             Id = id;
         }
-
         public String getOptionText() {
             return optionText;
         }
-
         public void setOptionText(String optionText) {
             this.optionText = optionText;
         }

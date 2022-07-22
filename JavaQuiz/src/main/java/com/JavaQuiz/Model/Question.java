@@ -1,7 +1,6 @@
 package com.JavaQuiz.Model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -15,39 +14,31 @@ public class Question{
     @Column(name = "question_title", nullable = false)
     private String title;
 
-    @OneToMany(targetEntity=Option.class, mappedBy="question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Option> options; //value to text
+    public List<Answers> getAnswers() {
+        return answers;
+    }
 
+    public void setAnswers(List<Answers> answers) {
+        this.answers = answers;
+    }
+
+    @OneToMany(targetEntity= Answers.class, mappedBy="question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Answers> answers; //value to text
 
     @Column(name = "option_correct", nullable = false)
     private String optionCorrect;
 
-//    @ManyToOne()
-//    @JoinColumn(name="quiz_id")
-//    private Quiz quiz;
-
-
     private String optionChosen =null;
-
 
     public Question() {
     }
 
-//    public Question(String title, List<Option> options, String optionCorrect, Quiz quiz, String subject) {
-//        super();
-//        this.title = title;
-//        this.options = options;
-//        this.optionCorrect = optionCorrect;
-//        this.quiz = quiz;
-//    }
-    public Question(String title, List<Option> options, String optionCorrect, String subject) {
+    public Question(String title, List<Answers> answers, String optionCorrect, String subject) {
         super();
         this.title = title;
-        this.options = options;
+        this.answers = answers;
         this.optionCorrect = optionCorrect;
     }
-
-
 
     public Long getQuestionId() {
         return questionId;
@@ -62,14 +53,6 @@ public class Question{
         this.title = title;
     }
 
-//    public Quiz getQuiz() {
-//        return quiz;
-//    }
-//
-//    public void setQuiz(Quiz quiz) {
-//        this.quiz = quiz;
-//    }
-
     public String getOptionCorrect() {
         return optionCorrect;
     }
@@ -78,13 +61,6 @@ public class Question{
         this.optionCorrect = optionCorrect;
     }
 
-    public List<Option> getOptions() {
-        return options;
-    }
-
-    public void setOptions(List<Option> options) {
-        this.options = options;
-    }
 
 
 }
