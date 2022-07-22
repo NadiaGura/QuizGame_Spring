@@ -50,13 +50,13 @@ public class LoginController {
     // Login form
     @RequestMapping("/login")
     public String login() {
-        return "login";
+        return services.isAuthenticated("login");
     }
 
     // password reset form
     @RequestMapping("/reset")
     public String resetPassword() {
-        return "reset";
+        return services.isAuthenticated("reset");
     }
     // [password reset form
     @RequestMapping("/change")
